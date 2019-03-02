@@ -20,6 +20,13 @@ class Vector:
                 self.y * const, \
                 self.z * const)
 
+    def __rmul__(self, const):
+        return self * const
+
+    def __truediv__(self, const):
+        """Return a Vector divided by a constant"""
+        return (1/const) * self
+
     def normalized(self):
         """Return the Vector, but normalized"""
         return self.scale(1/self.norm())
