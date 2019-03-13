@@ -9,19 +9,13 @@ class Universe:
         """Initialises an empty universe with default time steps of a day"""
         pass
 
-    def get_body(self, name):
-        """Returns body from planets attribute, errors if the name doesn't
-        correspond to any known planet"""
-        pass
-    
     def add_body(self, planet):
-        """Add a body to the planets attribute, errors if a body with that
-        name is already present"""
+        """Add a body to the universe"""
         pass
 
     def forces(self):
-        """Computes the forces on all planets, and returns a dictionary with
-        all forces as Vectors, where planet's names are keys"""
+        """Computes the forces on all planets, and returns these forces
+        as a collection of Vectors in a suitable format"""
         pass
     
     def update(self):
@@ -46,7 +40,7 @@ M_earth = 5.972e24
 M_mars = 6.39e23
 
 universe = Universe()
-earth = Planet('Earth', M_earth, (au, 0, 0), (0, sqrt(G*M_sun / au), 0))
+earth = Planet('Earth', M_earth, (au, 0, 0), (0, 29780, 0))
 sun = Planet('Sun', M_sun, (0, 0, 0), (0, 0, 0))
 mars = Planet('Mars', M_mars, (1.524*au, 0, 0), (0, 24131, 0))
 
